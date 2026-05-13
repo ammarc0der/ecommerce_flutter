@@ -38,7 +38,16 @@ class CartPage extends StatelessWidget {
                       content: Text("Your order has been placed successfully!"),
                       actions: [
                         TextButton(
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                backgroundColor: Colors.green,
+                                content: Text("purchase successfully!"),
+                                duration: Duration(seconds: 2),
+                              ),
+                            );
+                          },
                           child: Text("OK"),
                         ),
                       ],

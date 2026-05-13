@@ -5,7 +5,6 @@ import 'package:ecommerce/components/custom_search.dart';
 import 'package:ecommerce/components/product_card.dart';
 import 'package:ecommerce/data/products_data.dart';
 import 'package:ecommerce/favorite.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -80,7 +79,6 @@ class _HomepageState extends State<Homepage> {
               leading: Icon(Icons.logout, color: Colors.red),
               title: Text("Logout"),
               onTap: () async {
-                await FirebaseAuth.instance.signOut();
                 Navigator.of(
                   context,
                 ).pushNamedAndRemoveUntil("login", (route) => false);
