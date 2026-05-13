@@ -24,21 +24,18 @@ class _HomepageState extends State<Homepage> {
   List cart = [];
   List favorites = [];
 
-  //add to cart function
   void addToCart(dynamic product) {
     setState(() {
       cart.add(product);
     });
   }
 
-  //remove to cart function
   void removeFromCart(int index) {
     setState(() {
       cart.removeAt(index);
     });
   }
 
-  // add to favorite function
   void addToFavorite(product) {
     setState(() {
       if (!favorites.contains(product)) {
@@ -47,7 +44,6 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
-  // remove from favorite function
   void removeFromFavorite(int index) {
     setState(() {
       favorites.removeAt(index);

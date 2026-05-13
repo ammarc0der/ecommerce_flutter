@@ -25,6 +25,39 @@ class CartPage extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: cart.isEmpty
+          ? null
+          : Container(
+              padding: EdgeInsets.all(20),
+              child: ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text("Order Confirmed ✅"),
+                      content: Text("Your order has been placed successfully!"),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text("OK"),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber[700],
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: Text(
+                  "Checkout",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
     );
   }
 }
