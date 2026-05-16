@@ -92,14 +92,23 @@ class _LogInState extends State<LogIn> {
                   ),
                 ],
               ),
+
               Custombutton(
                 title: "login",
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Login successfully"),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+
                     Navigator.of(context).pushReplacementNamed("homepage");
                   }
                 },
               ),
+
               SizedBox(height: 20),
 
               MaterialButton(

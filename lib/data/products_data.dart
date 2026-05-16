@@ -148,6 +148,8 @@ List products = [
   },
 ];
 
+//---------------------------------------------------------
+
 List categories = [
   {"title": "Laptops", "icon": Icons.laptop},
   {"title": "Phones", "icon": Icons.phone_android_sharp},

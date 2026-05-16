@@ -1,14 +1,9 @@
 import 'package:ecommerce/Auth/log_in.dart';
 import 'package:ecommerce/Auth/sign_up.dart';
 import 'package:ecommerce/homepage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:ecommerce/firebase_options.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -40,15 +35,7 @@ class _MyAppState extends State<MyApp> {
           },
         ),
       },
-      home: FirebaseAuth.instance.currentUser == null
-          ? LogIn()
-          : Homepage(
-              onThemeChanged: (val) {
-                setState(() {
-                  isDarkMode = val;
-                });
-              },
-            ),
+      home: LogIn(),
     );
   }
 }

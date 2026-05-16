@@ -1,8 +1,6 @@
 import 'package:ecommerce/components/custombutton.dart';
 import 'package:ecommerce/components/customlogo.dart';
 import 'package:ecommerce/components/textformfield.dart';
-import 'package:firebase_auth/firebase_auth.dart'
-    show FirebaseAuth, FirebaseAuthException;
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -131,28 +129,23 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 30),
                 ],
               ),
+
               Custombutton(
                 title: "Sign up",
-                onPressed: () async {
+                onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    try {
-                      await FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                            email: email.text,
-                            password: password.text,
-                          );
-                    } on FirebaseAuthException catch (e) {
-                      if (e.code == 'weak-password') {
-                        print('The password provided is too weak.');
-                      } else if (e.code == 'email-already-in-use') {
-                        print('The account already exists for that email.');
-                      }
-                    } catch (e) {
-                      print(e);
-                    }
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Account created successfully"),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
+
+                    Navigator.of(context).pushReplacementNamed("login");
                   }
                 },
               ),
+
               SizedBox(height: 20),
 
               InkWell(

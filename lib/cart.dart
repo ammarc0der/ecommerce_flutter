@@ -40,10 +40,13 @@ class CartPage extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
+                            for (int i = 0; i < cart.length; i++) {
+                              removeFromCart(i);
+                            }
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 backgroundColor: Colors.green,
-                                content: Text("purchase successfully!"),
+                                content: Text("purchase successfully!"), 
                                 duration: Duration(seconds: 2),
                               ),
                             );
@@ -62,7 +65,7 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Checkout",
+                  "Buy Now",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:ecommerce/cart.dart';
+import 'package:ecommerce/cart.dart'; //homepage
 import 'package:ecommerce/components/custom_app_bar.dart';
 import 'package:ecommerce/components/custom_nav_Bar.dart';
 import 'package:ecommerce/components/custom_search.dart';
@@ -21,7 +21,6 @@ class _HomepageState extends State<Homepage> {
   bool isDarkMode = false;
 
   List cart = [];
-  List favorites = [];
 
   void addToCart(dynamic product) {
     setState(() {
@@ -34,6 +33,8 @@ class _HomepageState extends State<Homepage> {
       cart.removeAt(index);
     });
   }
+
+  List favorites = [];
 
   void addToFavorite(product) {
     setState(() {
