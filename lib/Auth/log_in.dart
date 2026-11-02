@@ -1,6 +1,8 @@
 import 'package:ecommerce/components/custombutton.dart';
 import 'package:ecommerce/components/customlogo.dart';
 import 'package:ecommerce/components/textformfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatefulWidget {
@@ -95,17 +97,54 @@ class _LogInState extends State<LogIn> {
 
               Custombutton(
                 title: "login",
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Login successfully"),
-                        backgroundColor: Colors.green,
-                      ),
-                    );
+                onPressed: () async {
+                  // تشغيل الـ validator
+                  // if (_formKey.currentState!.validate()) {
+                  //   try {
 
-                    Navigator.of(context).pushReplacementNamed("homepage");
-                  }
+                  //     final credential = await FirebaseAuth.instance
+                  //         .signInWithEmailAndPassword(
+                  //       email: email.text.trim(),
+                  //       password: password.text.trim(),
+                  //     );
+
+                  //     if (!context.mounted) return;
+                  //     await credential.user!.reload();
+                  //     if (!context.mounted) return;
+
+                  //     if (credential.user!.emailVerified) {                       // the email verified
+                  //       Navigator.of(context).pushReplacementNamed("homepage");
+                  //     }else{
+                  //       AwesomeDialog(
+                  //         context: context,
+                  //         dialogType: DialogType.info,
+                  //         animType: AnimType.rightSlide,
+                  //         title: 'Email not verified',
+                  //         desc: 'Please verify your email to continue',
+                  //         btnCancelOnPress: () {},
+                  //         btnOkOnPress: () {
+                  //           Navigator.of(context).pushReplacementNamed("homepage");
+                  //         },
+                  //         )..show();
+                  //     }
+                  //   } on FirebaseAuthException catch (e) {
+                  //     if (e.code == 'invalid-credential') {
+                  //       AwesomeDialog(
+                  //         context: context,
+                  //         dialogType: DialogType.info,
+                  //         animType: AnimType.rightSlide,
+                  //         title: 'Invalid credentials',
+                  //         desc: 'Please enter a valid email and password',
+                  //         btnCancelOnPress: () {},
+                  //         btnOkOnPress: () {
+                  //           Navigator.of(context).pushReplacementNamed("homepage");
+                  //         },
+                  //       )..show();
+                  //     }
+                  //   }
+                  //     }
+
+                  Navigator.of(context).pushReplacementNamed("homepage");
                 },
               ),
 

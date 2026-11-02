@@ -1,4 +1,4 @@
-import 'package:ecommerce/cart.dart'; //homepage
+import 'package:ecommerce/cart.dart';
 import 'package:ecommerce/components/custom_app_bar.dart';
 import 'package:ecommerce/components/custom_nav_Bar.dart';
 import 'package:ecommerce/components/custom_search.dart';
@@ -173,6 +173,7 @@ class _HomepageState extends State<Homepage> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
+
                 GridView.builder(
                   itemCount: products.length,
                   physics: NeverScrollableScrollPhysics(),

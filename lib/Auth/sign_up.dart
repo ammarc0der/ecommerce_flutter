@@ -1,6 +1,7 @@
 import 'package:ecommerce/components/custombutton.dart';
 import 'package:ecommerce/components/customlogo.dart';
 import 'package:ecommerce/components/textformfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -132,7 +133,7 @@ class _SignUpState extends State<SignUp> {
 
               Custombutton(
                 title: "Sign up",
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
@@ -140,6 +141,14 @@ class _SignUpState extends State<SignUp> {
                         backgroundColor: Colors.green,
                       ),
                     );
+
+                    try{
+                      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
+                    } on FirebaseAuthException catch (e){
+                      if(e.code == 'weak-password'){
+                        print("password");
+                      }
+                    }
 
                     Navigator.of(context).pushReplacementNamed("login");
                   }

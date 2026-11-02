@@ -57,22 +57,24 @@ class DefaultFirebaseOptions {
     projectId: 'ecommerce-71838',
     storageBucket: 'ecommerce-71838.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyA2hIlMHs8XH_2eRpILFpOCYYIMtTqt8lI',
     appId: '1:286371729239:ios:91afb3f52ee0d05975f812',
     messagingSenderId: '286371729239',
     projectId: 'ecommerce-71838',
     storageBucket: 'ecommerce-71838.firebasestorage.app',
+    androidClientId: '286371729239-tmjitgjj2m7q5bmc8lpvu6l3c7s3sjs2.apps.googleusercontent.com',
+    iosClientId: '286371729239-r86e83s03eaq5aveibnran2t06dj089m.apps.googleusercontent.com',
     iosBundleId: 'com.example.ecommerce',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyA2hIlMHs8XH_2eRpILFpOCYYIMtTqt8lI',
     appId: '1:286371729239:ios:91afb3f52ee0d05975f812',
     messagingSenderId: '286371729239',
     projectId: 'ecommerce-71838',
     storageBucket: 'ecommerce-71838.firebasestorage.app',
+    androidClientId: '286371729239-tmjitgjj2m7q5bmc8lpvu6l3c7s3sjs2.apps.googleusercontent.com',
+    iosClientId: '286371729239-r86e83s03eaq5aveibnran2t06dj089m.apps.googleusercontent.com',
     iosBundleId: 'com.example.ecommerce',
   );
 

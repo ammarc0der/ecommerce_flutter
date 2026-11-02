@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return AppBar(
+      toolbarHeight: 75,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

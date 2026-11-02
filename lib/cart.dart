@@ -34,7 +34,7 @@ class CartPage extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Text("Order Confirmed ✅"),
+                      title: Text("Order Confirmed !"),
                       content: Text("Your order has been placed successfully!"),
                       actions: [
                         TextButton(
@@ -46,7 +46,7 @@ class CartPage extends StatelessWidget {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 backgroundColor: Colors.green,
-                                content: Text("purchase successfully!"), 
+                                content: Text("purchase successfully!"),
                                 duration: Duration(seconds: 2),
                               ),
                             );
